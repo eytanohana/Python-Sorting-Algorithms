@@ -31,19 +31,28 @@ def selectionSort(ls):
         ls[i], ls[min_index] = ls[min_index], ls[i]
     return ls
 
+
 def insertionSort(ls):
     """
     :param ls: The list to sort
     :return: The list sorted
     """
+    for i in range(len(ls)):
+        for j in range(i, 0, -1):
+            if (ls[j] < ls[j-1]):
+                ls[j-1], ls[j] = ls[j], ls[j-1]
+
+    return ls
+
+
 
 
 
 
 
 if __name__ == '__main__':
-    ls = [5,4,3,23,43,6,23,8,23,2,1]
+    ls = [1,0]
     print(ls)
 
-    ls = selectionSort(ls)
+    ls = insertionSort(ls)
     print(ls)
