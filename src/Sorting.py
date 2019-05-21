@@ -123,7 +123,7 @@ def rand_quick_sort(ls):
     This algorithm works by recursively dividing the list into sublists
     and recursively sorting them. The algorithm chooses an element called
     the pivot and rearranges the sublists such that all elements smaller than the
-    pivot come before it and all elements greater than it come after.
+    pivot come before it and all elements greater than it come after (partition step).
     Runs in O(nlogn) on average and O(n^2) in the worst case.
 
     :param ls: the list to sort
@@ -133,20 +133,27 @@ def rand_quick_sort(ls):
         if start >= end:
             return
 
-        pivot_index = partition(ls, start, end)
-        if start != pivot_index:
-            rand_quick_sort(ls, start, pivot_index - 1)
-        if end != pivot_index:
-            rand_quick_sort(ls, pivot_index + 1, end)
+        # partition the list and get the index of the pivot
+        p_index = partition(ls, start, end)
+        if start != p_index:
+            # sort the sublist before the partition's index
+            rand_quick_sort(ls, start, p_index - 1)
+        if end != p_index:
+            # sort the sublist after the partition's index
+            rand_quick_sort(ls, p_index + 1, end)
 
     def partition(ls, start, end):
+        # choose the pivot to be the last element
         pivot = ls[end]
         i = start - 1
         for j in range(start, end):
+            # swap any element smaller than the pivot with current pivot index (i+1)
+            # and increment i to shift the pivot index over.
             if ls[j] < pivot:
                 ls[j], ls[i + 1] = ls[i + 1], ls[j]
                 i += 1
 
+        # finally put the pivot at the correct index.
         ls[i + 1], ls[end] = ls[end], ls[i + 1]
         return i + 1
 
