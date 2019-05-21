@@ -55,17 +55,47 @@ def insertion_sort(ls):
 
 
 def merge_sort(ls):
+    """
+    My implementation of the Merge Sort algorithm. The algorithm recursively
+    divides the array in half and sorts each half and combines the results back together.
+    Runs in O(nlogn)
+
+    :param ls: The list to sort
+    :return: The list sorted
+    """
     if len(ls) > 1:
+        # find the middle of the list
+        # and split it into the left half and the right half
         mid = len(ls) // 2
         left = ls[:mid]
         right = ls[mid:]
 
+        left_len, right_len = len(left), len(right)
+
+        # recursively sort each half
         merge_sort(left)
         merge_sort(right)
 
 
+        l = r = k = 0
+        while l < left_len and r < right_len:
 
+            if (left[l] < right[r]):
+                ls[k] = left[l]
+                l += 1
+            else:
+                ls[k] = right[r]
+                r += 1
+            k += 1
 
+        while l < left_len:
+            ls[k] = left[l]
+            l += 1
+            k += 1
+        while r < right_len:
+            ls[k] = right[r]
+            r += 1
+            k += 1
 
 
 
