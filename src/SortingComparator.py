@@ -1,15 +1,19 @@
 import matplotlib.pyplot as plt
 from numpy.random import normal
+from random import randint
 from src.Sorting import *
 from time import time
 
-def compareAlgorithms(sort1, sort2, num_tests=15):
+def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
     """
     This function plots the amount of time it takes for two different
     sorting algorithms to run as a function of the size of their input lists.
 
     :param sort1: The first sorting algorithm
     :param sort2: The Second Sorting algorithm
+    :param num_tests: number of sorts to perform for each algorithm
+    ":param rand_func: The random number function you want to use
+                    (normal(mean, std) or randInt(lower_bound, upper_bound))
     """
 
     # Create two lists to hold the times it took
@@ -25,7 +29,7 @@ def compareAlgorithms(sort1, sort2, num_tests=15):
         # In each successive iteration, we double
         # the size of the lists.
         for j in range(2**i):
-            a.append(normal(50, 25))
+            a.append(randFunc(0, 100))
             b.append(a[-1])
 
         # get the time it takes to
@@ -56,13 +60,21 @@ def compareAlgorithms(sort1, sort2, num_tests=15):
         if sort2 is k:
             label2 = v
 
+    title = "Normal" if randFunc is normal else "RandInt"
+
     # plot the graph
     plt.plot([2**i for i in range(num_tests)], sort1_times, color='red', label=label1)
     plt.plot([2**i for i in range(num_tests)], sort2_times, color='blue', label=label2)
+    plt.title(title)
     plt.xlabel('List Size')
     plt.ylabel('Time (ms) to sort')
     plt.legend()
     plt.show()
 
+
+
+
+
+
 if __name__ == '__main__':
-    compareAlgorithms(rand_quick_sort, merge_sort)
+    compareAlgorithms(rand_quick_sort, merge_sort,randFunc=normal)
