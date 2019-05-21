@@ -3,8 +3,7 @@ from src.Sorting import *
 from random import randint
 from time import time
 
-NUM_TESTS = 20
-T = 600
+NUM_TESTS = 15
 
 def compareAlgorithms(sort1, sort2):
     """
@@ -14,27 +13,40 @@ def compareAlgorithms(sort1, sort2):
     :param sort1: The first sorting algorithm
     :param sort2: The Second Sorting algorithm
     """
+    # Create two lists to hold the times it took
+    # to sort both lists using each algorithm
     sort1_times = []
     sort2_times = []
+    # We create NUM_TESTS lists of random
+    # numbers to sort.
     for i in range(NUM_TESTS):
         print(f"{i}", end=' ')
         a = []
         b = []
+        # In each successive iteration, we double
+        # the size of the lists.
         for j in range(2**i):
             a.append(randint(1, 100))
             b.append(a[-1])
 
+        # get the time it takes to
+        # sort the list using the first algorithm
+        # and add it to the list
         start_time = time() * 1000
         sort1(a)
         end_time = time() * 1000
         sort1_times.append(end_time - start_time)
 
+        # get the time it takes to
+        # sort the list using the second algorithm
+        # and add it to the list.
         start_time = time() * 1000
         sort2(b)
         end_time = time() * 1000
         sort2_times.append(end_time - start_time)
 
-
+    # We make a dictionary to hold the names of the algorithms
+    # for labeling the graph.
     algorithms = {bubble_sort : "Bubble Sort", selection_sort : "Selection Sort",
                   insertion_sort : "Insertion Sort", merge_sort : "Merge Sort"}
 
@@ -44,6 +56,7 @@ def compareAlgorithms(sort1, sort2):
         if sort2 is k:
             label2 = v
 
+    # plot the graph
     plt.plot([2**i for i in range(NUM_TESTS)], sort1_times, color='red', label=label1)
     plt.plot([2**i for i in range(NUM_TESTS)], sort2_times, color='blue', label=label2)
     plt.xlabel('List Size')
@@ -53,7 +66,3 @@ def compareAlgorithms(sort1, sort2):
 
 if __name__ == '__main__':
     compareAlgorithms(bubble_sort, merge_sort)
-
-
-
-
