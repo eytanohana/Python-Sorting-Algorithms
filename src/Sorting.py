@@ -124,7 +124,11 @@ def rand_quick_sort(ls):
     and recursively sorting them. The algorithm chooses an element called
     the pivot and rearranges the sublists such that all elements smaller than the
     pivot come before it and all elements greater than it come after (partition step).
+
     Runs in O(nlogn) on average and O(n^2) in the worst case.
+    It's interesting to notice when we compare quicksort with mergesort
+    using the normal distribution random number generator quicksort runs more in line with O(nlogn)
+    but with the randint function quicksort appears to behave more along the line of O(n^2)
 
     :param ls: the list to sort
     """

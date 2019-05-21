@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from numpy.random import normal
-from random import randint
+from random import randint, seed
 from src.Sorting import *
 from time import time
 
@@ -29,7 +29,7 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
         # In each successive iteration, we double
         # the size of the lists.
         for j in range(2**i):
-            a.append(randFunc(0, 100))
+            a.append(rand_func(0, 100))
             b.append(a[-1])
 
         # get the time it takes to
@@ -60,7 +60,7 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
         if sort2 is k:
             label2 = v
 
-    title = "Normal" if randFunc is normal else "RandInt"
+    title = "Normal" if rand_func is normal else "RandInt"
 
     # plot the graph
     plt.plot([2**i for i in range(num_tests)], sort1_times, color='red', label=label1)
@@ -74,7 +74,6 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
 
 
 
-
-
 if __name__ == '__main__':
-    compareAlgorithms(rand_quick_sort, merge_sort,randFunc=normal)
+    seed(time())
+    compareAlgorithms(rand_quick_sort, merge_sort,rand_func=randint)

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4129598d-74ac-4926-92d9-10c6770c437e" name="Default Changelist" comment="">
+    <list default="true" id="4129598d-74ac-4926-92d9-10c6770c437e" name="Default Changelist" comment="changed comepare function to take two different random functions">
+      <change afterPath="$PROJECT_DIR$/Comparison Graphs/RandomPivot_merge_norm1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comparison Graphs/randpivot_merge_norm2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comparison Graphs/randpivot_merge_norm3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comparison Graphs/randpivot_merge_randint1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comparison Graphs/randpivot_merge_randint2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comparison Graphs/randpivot_merge_randint3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sorting.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sorting.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SortingComparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortingComparator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Python_Sorting_Algorithms$SortingComparator.coverage" NAME="SortingComparator Coverage Results" MODIFIED="1558479838287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/Python_Sorting_Algorithms$SortingComparator.coverage" NAME="SortingComparator Coverage Results" MODIFIED="1558481402925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Python_Sorting_Algorithms$Sorting.coverage" NAME="Sorting Coverage Results" MODIFIED="1558462025132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="DatabaseView">
@@ -43,25 +50,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="png" value="8" />
           <entry key="py" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Image" value="8" />
           <entry key="Python" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="113" />
-          <entry key="py" value="9233" />
-          <entry key="txt" value="846" />
+          <entry key="py" value="9609" />
+          <entry key="txt" value="911" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="846" />
-          <entry key="Python" value="9346" />
+          <entry key="PLAIN_TEXT" value="911" />
+          <entry key="Python" value="9722" />
         </counts>
       </usages-collector>
     </session>
@@ -71,10 +80,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Sorting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-674">
-              <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+            <state relative-caret-position="-1">
+              <caret line="110" column="18" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
               <folding>
-                <marker date="1558475008023" expanded="true" signature="5918:5923" ph="..." />
+                <marker date="1558480586349" expanded="true" signature="6183:6188" ph="..." />
               </folding>
             </state>
           </provider>
@@ -84,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/src/SortingComparator.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+              <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -139,6 +148,11 @@
             <path>
               <item name="Python-Sorting-Algorithms" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python-Sorting-Algorithms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python-Sorting-Algorithms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python-Sorting-Algorithms" type="462c0819:PsiDirectoryNode" />
+              <item name="Comparison Graphs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Python-Sorting-Algorithms" type="b2602c69:ProjectViewProjectNode" />
@@ -346,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558476014133</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="changed comepare function to take two different random functions">
+      <created>1558480219512</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1558480219512</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -365,7 +386,7 @@
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27382874" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27382874" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -384,7 +405,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32846716" />
-      <window_info active="true" anchor="bottom" x="516" y="141" width="617" height="416" id="SciView" order="12" type="WINDOWED" visible="true" weight="0.45547447" />
+      <window_info anchor="bottom" x="450" y="165" width="617" height="416" id="SciView" order="12" type="WINDOWED" weight="0.45547447" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -449,7 +470,8 @@
     <MESSAGE value="implemented quick sort random pivot" />
     <MESSAGE value="commented quicksort" />
     <MESSAGE value="Changed random function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed random function" />
+    <MESSAGE value="changed comepare function to take two different random functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed comepare function to take two different random functions" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.7/codecs.py">
@@ -468,18 +490,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sorting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-674">
-          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        <state relative-caret-position="-1">
+          <caret line="110" column="18" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
           <folding>
-            <marker date="1558475008023" expanded="true" signature="5918:5923" ph="..." />
+            <marker date="1558480586349" expanded="true" signature="6183:6188" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Comparison Graphs/randpivot_merge_norm2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Comparison Graphs/randpivot_merge_norm3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Comparison Graphs/randpivot_merge_randint3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Comparison Graphs/randpivot_merge_randint2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Comparison Graphs/randpivot_merge_randint1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Comparison Graphs/RandomPivot_merge_norm1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SortingComparator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
