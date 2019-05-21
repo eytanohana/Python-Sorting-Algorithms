@@ -55,45 +55,6 @@ def insertion_sort(ls):
 
 
 def merge_sort(ls):
-    def merge_sort(ls, begin_index, end_index):
-        if begin_index < end_index:
-            mid_index = (begin_index + end_index) // 2
-            merge_sort(ls, begin_index, mid_index)
-            merge_sort(ls, mid_index+1, end_index)
-            merge(ls, begin_index, mid_index, end_index)
-
-    def merge(ls, begin_index, mid_index, end_index):
-        left_len = mid_index - begin_index + 1
-        right_len = end_index - mid_index
-        left = []
-        right = []
-        for i in range(left_len):
-            left.append(ls[i])
-        for i in range(right_len):
-            right.append(ls[mid_index+1+i])
-
-        l = r = k = 0
-
-        while l < left_len and r < right_len:
-            if left[l] < right[r]:
-                ls[k] = left[l]
-                l += 1
-            else:
-                ls[k] = right[r]
-                r += 1
-            k += 1
-
-        while l < left_len:
-            ls[k] = left[l]
-            l += 1
-            k += 1
-        while r < right_len:
-            l[k] = right[r]
-            r += 1
-            k += 1
-
-
-    merge_sort(ls, 0, len(ls)-1)
 
 
 
@@ -103,7 +64,7 @@ def merge_sort(ls):
 
 
 if __name__ == '__main__':
-    ls = [5,4,3,2,1]
+    ls = [6,5,4,3,2,1]
     print(ls)
 
     merge_sort(ls)
