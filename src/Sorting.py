@@ -55,6 +55,13 @@ def insertion_sort(ls):
 
 
 def merge_sort(ls):
+    if len(ls) > 1:
+        mid = len(ls) // 2
+        left = ls[:mid]
+        right = ls[mid:]
+
+        merge_sort(left)
+        merge_sort(right)
 
 
 
