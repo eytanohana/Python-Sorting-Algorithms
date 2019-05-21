@@ -3,13 +3,12 @@
 #########################################################################################################
 def bubble_sort(ls):
     """
-    My implementation of the Bubble Sort algorithm with the optimization that if
+    An implementation of the Bubble Sort algorithm with the optimization that if
     it traverses the list once without swapping at all the function ends.
     The algorithm works by constantly "bubbling" the largest value to the ebd of the list
     Runs in O(n^2).
 
     :param ls: The list to sort
-    :return: The list sorted
     """
     for j in range(len(ls)-1, 0, -1):
         for i in range(j):
@@ -24,14 +23,13 @@ def bubble_sort(ls):
 
 def selection_sort(ls):
     """
-    My implementation of the Selection Sort algorithm.
+    An implementation of the Selection Sort algorithm.
     The algorithm works by finding the minimum in the list and swapping it
     with the 0'th element. Then finding the next minimum and swapping it with the first
     and so on.
     Runs in O(n^2).
 
     :param ls: The list to sort
-    :return: The list sorted
     """
     min_index = 0
     for i in range(len(ls)-1):
@@ -51,13 +49,12 @@ def selection_sort(ls):
 
 def insertion_sort(ls):
     """
-    My implementation of the Insertion Sort algorithm.
+    An implementation of the Insertion Sort algorithm.
     The algorithm works by starting at the beginning of the list
     and bringing smaller elements towards the beginning.
     Runs in O(n^2).
 
     :param ls: The list to sort
-    :return: The list sorted
     """
     for i in range(len(ls)):
         for j in range(i, 0, -1):
@@ -72,12 +69,11 @@ def insertion_sort(ls):
 
 def merge_sort(ls):
     """
-    My implementation of the Merge Sort algorithm. The algorithm recursively
+    An implementation of the Merge Sort algorithm. The algorithm recursively
     divides the array in half and sorts each half and combines the results back together.
     Runs in O(nlogn)
 
     :param ls: The list to sort
-    :return: The list sorted
     """
     if len(ls) > 1:
         # find the middle of the list
@@ -118,6 +114,41 @@ def merge_sort(ls):
 
 
 ########################################################################################
-#                                   Quick Sort                                         #
+#                                   Quick Sort Arbitrary Pivot                         #
 ########################################################################################
-def quick_sort(ls):
+def rand_quick_sort(ls):
+    """
+    An implementation of the quick sort algorithm in which the pivot
+    is an arbitrary value determined by the last element of the list.
+    This algorithm works by recursively dividing the list into sublists
+    and recursively sorting them. The algorithm chooses an element called
+    the pivot and rearranges the sublists such that all elements smaller than the
+    pivot come before it and all elements greater than it come after.
+    Runs in O(nlogn) on average and O(n^2) in the worst case.
+
+    :param ls: the list to sort
+    """
+    def rand_quick_sort(ls, start, end):
+
+        if start >= end:
+            return
+
+        pivot_index = partition(ls, start, end)
+        if start != pivot_index:
+            rand_quick_sort(ls, start, pivot_index - 1)
+        if end != pivot_index:
+            rand_quick_sort(ls, pivot_index + 1, end)
+
+    def partition(ls, start, end):
+        pivot = ls[end]
+        i = start - 1
+        for j in range(start, end):
+            if ls[j] < pivot:
+                ls[j], ls[i + 1] = ls[i + 1], ls[j]
+                i += 1
+
+        ls[i + 1], ls[end] = ls[end], ls[i + 1]
+        return i + 1
+
+
+    rand_quick_sort(ls, 0, len(ls) - 1)

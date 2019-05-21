@@ -65,4 +65,7 @@ def compareAlgorithms(sort1, sort2):
     plt.show()
 
 if __name__ == '__main__':
-    compareAlgorithms(bubble_sort, merge_sort)
+    # compareAlgorithms(bubble_sort, merge_sort)
+    ls = [4,2,5,7,3,7,4,32,5,12,7,3,0,1,2,5,3,4,5]
+    rand_quick_sort(ls)
+    print(ls)
