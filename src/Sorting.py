@@ -15,7 +15,6 @@ def bubble_sort(ls):
         for i in range(j):
             if ls[i] > ls[i+1]:
                 ls[i], ls[i+1] = ls[i+1], ls[i]
-    return ls
 
 def selection_sort(ls):
     """
@@ -37,7 +36,6 @@ def selection_sort(ls):
                 minimum = ls[j]
                 min_index = j
         ls[i], ls[min_index] = ls[min_index], ls[i]
-    return ls
 
 
 def insertion_sort(ls):
@@ -54,8 +52,6 @@ def insertion_sort(ls):
         for j in range(i, 0, -1):
             if (ls[j] < ls[j-1]):
                 ls[j-1], ls[j] = ls[j], ls[j-1]
-
-    return ls
 
 
 def merge_sort(ls):
@@ -76,18 +72,29 @@ def merge_sort(ls):
         for i in range(right_len):
             right.append(ls[mid_index+1+i])
 
-        i = 0
-        j = 0
-        for k in range(begin_index, end_index-1):
-            if left[i] <= right[j]:
-                ls[k] = left[i]
-                i += 1
+        l = r = k = 0
+
+        while l < left_len and r < right_len:
+            if left[l] < right[r]:
+                ls[k] = left[l]
+                l += 1
             else:
-                ls[k] = right[j]
-                j += 1
+                ls[k] = right[r]
+                r += 1
+            k += 1
+
+        while l < left_len:
+            ls[k] = left[l]
+            l += 1
+            k += 1
+        while r < right_len:
+            l[k] = right[r]
+            r += 1
+            k += 1
 
 
-    return merge_sort(ls, 0, len(ls)-1)
+    merge_sort(ls, 0, len(ls)-1)
+
 
 
 
@@ -99,5 +106,5 @@ if __name__ == '__main__':
     ls = [5,4,3,2,1]
     print(ls)
 
-    ls = merge_sort(ls)
+    merge_sort(ls)
     print(ls)
