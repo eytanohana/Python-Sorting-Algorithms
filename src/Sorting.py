@@ -76,10 +76,10 @@ def merge_sort(ls):
         merge_sort(left)
         merge_sort(right)
 
-
+        # merge the sorted halves back together
+        # start merging up until the length of the shorter list
         l = r = k = 0
         while l < left_len and r < right_len:
-
             if (left[l] < right[r]):
                 ls[k] = left[l]
                 l += 1
@@ -88,10 +88,13 @@ def merge_sort(ls):
                 r += 1
             k += 1
 
+        # add in the rest of the longer one at the end of the list
+        # it's guaranteed to still be sorted
         while l < left_len:
             ls[k] = left[l]
             l += 1
             k += 1
+
         while r < right_len:
             ls[k] = right[r]
             r += 1
