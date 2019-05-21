@@ -3,8 +3,6 @@ from src.Sorting import *
 from random import randint
 from time import time
 
-NUM_TESTS = 15
-
 def compareAlgorithms(sort1, sort2):
     """
     This function plots the amount of time it takes for two different
@@ -13,10 +11,12 @@ def compareAlgorithms(sort1, sort2):
     :param sort1: The first sorting algorithm
     :param sort2: The Second Sorting algorithm
     """
+
     # Create two lists to hold the times it took
     # to sort both lists using each algorithm
     sort1_times = []
     sort2_times = []
+    NUM_TESTS = 12
     # We create NUM_TESTS lists of random
     # numbers to sort.
     for i in range(NUM_TESTS):
