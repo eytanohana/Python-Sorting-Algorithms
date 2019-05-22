@@ -170,24 +170,34 @@ def partition(ls, start, end):
 #                                   Quick Sort median of 3 Pivot                         #
 ########################################################################################
 
-def median_quicksort(ls):
-    def median_quicksort(ls, start, end):
-        mid = (start + end) // 2
+def median3_quicksort(ls):
+    """
+    An implementation of the quick sort algorithm in which the pivot is chosen by taking
+    the median of three values chosen from the beginning middle and end of the list.
 
+    :param ls: The list to sort.
+    """
+    def median3_quicksort(ls, start, end):
+        mid = (start + end) // 2
+        # get the median of the three values
         median = [ls[start], ls[mid], ls[end]]
         bubble_sort(median)
         pivot = median[1]
+
+        # partition the list and get the index of the pivot.
         p_index = partition_pivot(ls, start, end, pivot)
-
+        # Sort the sub-list from the start to the pivot
         if start != p_index:
-            median_quicksort(ls, start, p_index - 1)
-
+            median3_quicksort(ls, start, p_index - 1)
+        # Sort the sub-list from the pivot till the end.
         if end != p_index:
-            median_quicksort(ls, p_index + 1, end)
-
-    median_quicksort(ls, 0, len(ls) - 1)
+            median3_quicksort(ls, p_index + 1, end)
 
 
+    median3_quicksort(ls, 0, len(ls) - 1)
+
+# switch the pivot to the end and call the original pivot function
+# which takes the end of the list as the pivot.
 def partition_pivot(ls, start, end, pivot):
     for i in range(start, end):
         if ls[i] == pivot:

@@ -76,4 +76,4 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
 
 if __name__ == '__main__':
     seed(time())
-    compareAlgorithms(rand_quick_sort, median_quicksort,rand_func=normal)
+    compareAlgorithms(insertion_sort, median3_quicksort,rand_func=normal)

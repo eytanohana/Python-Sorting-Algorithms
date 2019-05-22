@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Python_Sorting_Algorithms$SortingComparator.coverage" NAME="SortingComparator Coverage Results" MODIFIED="1558483644981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/Python_Sorting_Algorithms$SortingComparator.coverage" NAME="SortingComparator Coverage Results" MODIFIED="1558558656929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Python_Sorting_Algorithms$Sorting.coverage" NAME="Sorting Coverage Results" MODIFIED="1558462025132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="DatabaseView">
@@ -34,54 +34,50 @@
     <session id="-2077329671">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="3" />
           <entry key="png" value="8" />
-          <entry key="py" value="6" />
+          <entry key="py" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="8" />
           <entry key="Markdown" value="3" />
-          <entry key="Python" value="6" />
+          <entry key="Python" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="113" />
-          <entry key="py" value="10362" />
-          <entry key="txt" value="933" />
+          <entry key="py" value="10899" />
+          <entry key="txt" value="962" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="933" />
-          <entry key="Python" value="10475" />
+          <entry key="PLAIN_TEXT" value="962" />
+          <entry key="Python" value="11012" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Sorting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="187" selection-start-line="187" selection-end-line="187" />
-              <folding>
-                <marker date="1558483280691" expanded="true" signature="5640:5645" ph="..." />
-                <marker date="1558483280691" expanded="true" signature="6470:6475" ph="..." />
-              </folding>
+            <state relative-caret-position="-119">
+              <caret line="178" column="7" lean-forward="true" selection-start-line="178" selection-start-column="7" selection-end-line="178" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -90,10 +86,7 @@
         <entry file="file://$PROJECT_DIR$/src/SortingComparator.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="307">
-              <caret line="78" column="72" selection-start-line="78" selection-start-column="72" selection-end-line="78" selection-end-column="72" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+              <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -118,8 +111,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Sorting.py" />
         <option value="$PROJECT_DIR$/src/SortingComparator.py" />
+        <option value="$PROJECT_DIR$/src/Sorting.py" />
       </list>
     </option>
   </component>
@@ -253,6 +246,7 @@
       <updated>1558392495675</updated>
       <workItem from="1558459815880" duration="53000" />
       <workItem from="1558459907158" duration="10000" />
+      <workItem from="1558528162171" duration="30000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented insertion sort">
       <created>1558393459321</created>
@@ -366,11 +360,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558481437155</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="implemented median quicksort">
+      <created>1558483675100</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1558483675100</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63000" />
+    <option name="totallyTimeSpent" value="93000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -382,10 +383,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2180937" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22455573" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -394,7 +395,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.329927" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329927" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5737226" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -404,7 +405,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32846716" />
-      <window_info anchor="bottom" x="450" y="165" width="617" height="416" id="SciView" order="12" type="WINDOWED" weight="0.45547447" />
+      <window_info anchor="bottom" x="450" y="165" width="617" height="416" id="SciView" order="12" weight="0.38248175" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -471,7 +472,8 @@
     <MESSAGE value="Changed random function" />
     <MESSAGE value="changed comepare function to take two different random functions" />
     <MESSAGE value="added observations" />
-    <option name="LAST_COMMIT_MESSAGE" value="added observations" />
+    <MESSAGE value="implemented median quicksort" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented median quicksort" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.7/site-packages/matplotlib/pyplot.py">
@@ -516,22 +518,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sorting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="187" selection-start-line="187" selection-end-line="187" />
-          <folding>
-            <marker date="1558483280691" expanded="true" signature="5640:5645" ph="..." />
-            <marker date="1558483280691" expanded="true" signature="6470:6475" ph="..." />
-          </folding>
+        <state relative-caret-position="-119">
+          <caret line="178" column="7" lean-forward="true" selection-start-line="178" selection-start-column="7" selection-end-line="178" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SortingComparator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
-          <caret line="78" column="72" selection-start-line="78" selection-start-column="72" selection-end-line="78" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
         </state>
       </provider>
     </entry>
