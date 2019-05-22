@@ -146,20 +146,51 @@ def rand_quick_sort(ls):
             # sort the sublist after the partition's index
             rand_quick_sort(ls, p_index + 1, end)
 
-    def partition(ls, start, end):
-        # choose the pivot to be the last element
-        pivot = ls[end]
-        i = start - 1
-        for j in range(start, end):
-            # swap any element smaller than the pivot with current pivot index (i+1)
-            # and increment i to shift the pivot index over.
-            if ls[j] < pivot:
-                ls[j], ls[i + 1] = ls[i + 1], ls[j]
-                i += 1
-
-        # finally put the pivot at the correct index.
-        ls[i + 1], ls[end] = ls[end], ls[i + 1]
-        return i + 1
-
 
     rand_quick_sort(ls, 0, len(ls) - 1)
+
+
+def partition(ls, start, end):
+    # choose the pivot to be the last element
+    pivot = ls[end]
+    i = start - 1
+    for j in range(start, end):
+        # swap any element smaller than the pivot with current pivot index (i+1)
+        # and increment i to shift the pivot index over.
+        if ls[j] < pivot:
+            ls[j], ls[i + 1] = ls[i + 1], ls[j]
+            i += 1
+
+    # finally put the pivot at the correct index.
+    ls[i + 1], ls[end] = ls[end], ls[i + 1]
+    return i + 1
+
+
+########################################################################################
+#                                   Quick Sort median of 3 Pivot                         #
+########################################################################################
+
+def median_quicksort(ls):
+    def median_quicksort(ls, start, end):
+        mid = (start + end) // 2
+
+        median = [ls[start], ls[mid], ls[end]]
+        bubble_sort(median)
+        pivot = median[1]
+        p_index = partition_pivot(ls, start, end, pivot)
+
+        if start != p_index:
+            median_quicksort(ls, start, p_index - 1)
+
+        if end != p_index:
+            median_quicksort(ls, p_index + 1, end)
+
+    median_quicksort(ls, 0, len(ls) - 1)
+
+
+def partition_pivot(ls, start, end, pivot):
+    for i in range(start, end):
+        if ls[i] == pivot:
+            ls[i], ls[end] = ls[end], ls[i]
+            break
+    return partition(ls, start, end)

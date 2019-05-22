@@ -52,7 +52,7 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
     # for labeling the graph.
     algorithms = {bubble_sort : "Bubble Sort", selection_sort : "Selection Sort",
                   insertion_sort : "Insertion Sort", merge_sort : "Merge Sort",
-                  rand_quick_sort : "Random Pivot Quick Sort"}
+                  rand_quick_sort : "Random Pivot Quick Sort", median_quicksort : "Median of 3 Pivot Quick Sort"}
 
     for k,v in algorithms.items():
         if sort1 is k:
@@ -76,4 +76,4 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
 
 if __name__ == '__main__':
     seed(time())
-    compareAlgorithms(rand_quick_sort, merge_sort,rand_func=randint)
+    compareAlgorithms(rand_quick_sort, median_quicksort,rand_func=normal)
