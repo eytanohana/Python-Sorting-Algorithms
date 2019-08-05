@@ -4,6 +4,12 @@ from random import randint, seed
 from src.Sorting import *
 from time import time
 
+# We make a dictionary to hold the names of the algorithms
+# for labeling the graph.
+algorithms = {bubble_sort: "Bubble Sort", selection_sort: "Selection Sort",
+              insertion_sort: "Insertion Sort", merge_sort: "Merge Sort",
+              rand_quick_sort: "Random Pivot Quick Sort", median3_quicksort: "Median of 3 Pivot Quick Sort"}
+
 def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
     """
     This function plots the amount of time it takes for two different
@@ -48,12 +54,6 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
         end_time = time() * 1000
         sort2_times.append(end_time - start_time)
 
-    # We make a dictionary to hold the names of the algorithms
-    # for labeling the graph.
-    algorithms = {bubble_sort : "Bubble Sort", selection_sort : "Selection Sort",
-                  insertion_sort : "Insertion Sort", merge_sort : "Merge Sort",
-                  rand_quick_sort : "Random Pivot Quick Sort", median3_quicksort : "Median of 3 Pivot Quick Sort"}
-
 
     # plot the graph
     plt.plot([2**i for i in range(num_tests)], sort1_times, color='red', label=algorithms[sort1])
@@ -65,8 +65,6 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
     plt.show()
 
 
-
-
 if __name__ == '__main__':
     seed(time())
-    compareAlgorithms(insertion_sort, median3_quicksort, num_tests=10, rand_func=randint)
+    compareAlgorithms(merge_sort, rand_quick_sort, num_tests=15, rand_func=randint)
