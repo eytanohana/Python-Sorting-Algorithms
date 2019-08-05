@@ -23,7 +23,7 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
     # We create NUM_TESTS lists of random
     # numbers to sort.
     for i in range(num_tests):
-        print(f"Test {i}...")
+        print(f"Test {i+1}...")
         a = []
         b = []
         # In each successive iteration, we double
@@ -52,22 +52,15 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
     # for labeling the graph.
     algorithms = {bubble_sort : "Bubble Sort", selection_sort : "Selection Sort",
                   insertion_sort : "Insertion Sort", merge_sort : "Merge Sort",
-                  rand_quick_sort : "Random Pivot Quick Sort", median_quicksort : "Median of 3 Pivot Quick Sort"}
+                  rand_quick_sort : "Random Pivot Quick Sort", median3_quicksort : "Median of 3 Pivot Quick Sort"}
 
-    for k,v in algorithms.items():
-        if sort1 is k:
-            label1 = v
-        if sort2 is k:
-            label2 = v
-
-    title = "Normal" if rand_func is normal else "RandInt"
 
     # plot the graph
-    plt.plot([2**i for i in range(num_tests)], sort1_times, color='red', label=label1)
-    plt.plot([2**i for i in range(num_tests)], sort2_times, color='blue', label=label2)
-    plt.title(title)
+    plt.plot([2**i for i in range(num_tests)], sort1_times, color='red', label=algorithms[sort1])
+    plt.plot([2**i for i in range(num_tests)], sort2_times, color='blue', label=algorithms[sort2])
+    plt.title('Time as a function of list size')
     plt.xlabel('List Size')
-    plt.ylabel('Time (ms) to sort')
+    plt.ylabel('Time(ms) to sort')
     plt.legend()
     plt.show()
 
@@ -76,4 +69,4 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
 
 if __name__ == '__main__':
     seed(time())
-    compareAlgorithms(insertion_sort, median3_quicksort,rand_func=normal)
+    compareAlgorithms(insertion_sort, median3_quicksort, num_tests=10, rand_func=randint)
