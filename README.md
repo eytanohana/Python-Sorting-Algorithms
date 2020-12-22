@@ -5,4 +5,4 @@ I included the functionality to test their efficiency against each other by chec
 as a function of the size of the list passed into them. I used matploblib to plot the graphs and included the 
 functionality to decide whether to generate numbers along a normal distribution or a pythons randInt function.
 
-The notebook graphs all algorithms against one another.
+The notebook runs each algorithms against one another and graphs their runtime.
