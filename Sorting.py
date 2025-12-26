@@ -29,7 +29,6 @@ def selection_sort(ls):
 
     :param ls: The list to sort
     """
-    min_index = 0
     for i in range(len(ls)-1):
         minimum = ls[i]
         min_index = i
@@ -54,7 +53,7 @@ def insertion_sort(ls):
     """
     for i in range(len(ls)):
         for j in range(i, 0, -1):
-            if (ls[j] < ls[j-1]):
+            if ls[j] < ls[j-1]:
                 ls[j-1], ls[j] = ls[j], ls[j-1]
 
 
@@ -86,7 +85,7 @@ def merge_sort(ls):
         # start merging up until the length of the shorter list
         l = r = k = 0
         while l < left_len and r < right_len:
-            if (left[l] < right[r]):
+            if left[l] < right[r]:
                 ls[k] = left[l]
                 l += 1
             else:
@@ -126,22 +125,22 @@ def rand_quick_sort(ls):
 
     :param ls: the list to sort
     """
-    def rand_quick_sort(ls, start, end):
+    def _rand_quick_sort(arr, start, end):
 
         if start >= end:
             return
 
         # partition the list and get the index of the pivot
-        p_index = _partition(ls, start, end)
+        p_index = _partition(arr, start, end)
         if start != p_index:
             # sort the sublist before the partition's index
-            rand_quick_sort(ls, start, p_index - 1)
+            _rand_quick_sort(arr, start, p_index - 1)
         if end != p_index:
             # sort the sublist after the partition's index
-            rand_quick_sort(ls, p_index + 1, end)
+            _rand_quick_sort(arr, p_index + 1, end)
 
 
-    rand_quick_sort(ls, 0, len(ls) - 1)
+    _rand_quick_sort(ls, 0, len(ls) - 1)
 
 
 def _partition(ls, start, end):
@@ -170,24 +169,24 @@ def median3_quicksort(ls):
 
     :param ls: The list to sort.
     """
-    def median3_quicksort(ls, start, end):
+    def _median3_quicksort(arr, start, end):
         mid = (start + end) // 2
         # get the median of the three values
-        median = [ls[start], ls[mid], ls[end]]
+        median = [arr[start], arr[mid], arr[end]]
         bubble_sort(median)
         pivot = median[1]
 
         # partition the list and get the index of the pivot.
-        p_index = _partition_pivot(ls, start, end, pivot)
+        p_index = _partition_pivot(arr, start, end, pivot)
         # Sort the sub-list from the start to the pivot
         if start != p_index:
-            median3_quicksort(ls, start, p_index - 1)
+            _median3_quicksort(arr, start, p_index - 1)
         # Sort the sub-list from the pivot till the end.
         if end != p_index:
-            median3_quicksort(ls, p_index + 1, end)
+            _median3_quicksort(arr, p_index + 1, end)
 
 
-    median3_quicksort(ls, 0, len(ls) - 1)
+    _median3_quicksort(ls, 0, len(ls) - 1)
 
 # switch the pivot to the end and call the original pivot function
 # which takes the end of the list as the pivot.
