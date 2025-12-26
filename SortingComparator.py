@@ -23,7 +23,7 @@ def compare_and_plot_algorithms(sort1, sort2, num_tests=15, rand_func=normal):
     ":param rand_func: The random number function you want to use
                     (normal(mean, std) or randInt(lower_bound, upper_bound))
     """
-    print(f'comparing {algorithms[sort1]} vs {algorithms[sort2]}')
+    print(f'comparing `{algorithms[sort1]}` vs `{algorithms[sort2]}`')
     # Create two lists to hold the times it took
     # to sort both lists using each algorithm
     sort1_times = []
