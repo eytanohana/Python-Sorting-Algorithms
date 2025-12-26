@@ -11,7 +11,7 @@ algorithms = {bubble_sort: "Bubble Sort", selection_sort: "Selection Sort",
               rand_quick_sort: "Random Pivot Quick Sort", median3_quicksort: "Median of 3 Pivot Quick Sort"}
 
 
-def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
+def compare_and_plot_algorithms(sort1, sort2, num_tests=15, rand_func=normal):
     """
     This function plots the amount of time it takes for two different
     sorting algorithms to run as a function of the size of their input lists.
@@ -67,4 +67,4 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
 
 if __name__ == '__main__':
     seed(time())
-    compareAlgorithms(bubble_sort, insertion_sort, num_tests=15, rand_func=randint)
+    compare_and_plot_algorithms(merge_sort, rand_quick_sort, num_tests=15, rand_func=randint)
