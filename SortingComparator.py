@@ -1,8 +1,9 @@
+from time import time
+
 import matplotlib.pyplot as plt
 from numpy.random import normal
-from random import randint, seed
+
 from Sorting import bubble_sort, selection_sort, insertion_sort, merge_sort, rand_quick_sort, median3_quicksort
-from time import time
 
 # We make a dictionary to hold the names of the algorithms
 # for labeling the graph.
@@ -22,7 +23,7 @@ def compare_and_plot_algorithms(sort1, sort2, num_tests=15, rand_func=normal):
     ":param rand_func: The random number function you want to use
                     (normal(mean, std) or randInt(lower_bound, upper_bound))
     """
-
+    print(f'comparing {algorithms[sort1]} vs {algorithms[sort2]}')
     # Create two lists to hold the times it took
     # to sort both lists using each algorithm
     sort1_times = []
@@ -63,8 +64,3 @@ def compare_and_plot_algorithms(sort1, sort2, num_tests=15, rand_func=normal):
     plt.ylabel('Time to sort (ms)')
     plt.legend()
     plt.show()
-
-
-if __name__ == '__main__':
-    seed(time())
-    compare_and_plot_algorithms(merge_sort, rand_quick_sort, num_tests=15, rand_func=randint)
