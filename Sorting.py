@@ -61,49 +61,53 @@ def insertion_sort(ls):
 #                                   Merge Sort                                                         #
 #########################################################################################################
 def merge_sort(ls):
-    """
-    An implementation of the Merge Sort algorithm. The algorithm recursively
-    divides the array in half and sorts each half and combines the results back together.
-    Runs in O(nlogn)
+    def _merge_sort(ls, start: int, stop: int):
+        """
+        An implementation of the Merge Sort algorithm. The algorithm recursively
+        divides the array in half and sorts each half and combines the results back together.
+        Runs in O(nlogn)
 
-    :param ls: The list to sort
-    """
-    if len(ls) > 1:
+        :param ls: The list to sort
+        """
+        if start >= stop or stop - start < 2:
+            return
         # find the middle of the list
         # and split it into the left half and the right half
-        mid = len(ls) // 2
-        left = ls[:mid]
-        right = ls[mid:]
-
-        left_len, right_len = len(left), len(right)
+        mid = (start + stop) // 2
 
         # recursively sort each half
-        merge_sort(left)
-        merge_sort(right)
+        _merge_sort(ls, start, mid)
+        _merge_sort(ls, mid, stop)
+
+        left = ls[start:mid].copy()
+        right = ls[mid:stop].copy()
 
         # merge the sorted halves back together
         # start merging up until the length of the shorter list
-        l = r = k = 0
+        left_len, right_len = len(left), len(right)
+        l, r, index = 0, 0, start
         while l < left_len and r < right_len:
             if left[l] < right[r]:
-                ls[k] = left[l]
+                ls[index] = left[l]
                 l += 1
             else:
-                ls[k] = right[r]
+                ls[index] = right[r]
                 r += 1
-            k += 1
+            index += 1
 
         # add in the rest of the longer one at the end of the list
         # it's guaranteed to still be sorted
         while l < left_len:
-            ls[k] = left[l]
+            ls[index] = left[l]
             l += 1
-            k += 1
+            index += 1
 
         while r < right_len:
-            ls[k] = right[r]
+            ls[index] = right[r]
             r += 1
-            k += 1
+            index += 1
+
+    _merge_sort(ls, 0, len(ls))
 
 
 ########################################################################################
