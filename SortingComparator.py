@@ -58,7 +58,7 @@ def compare_and_plot_algorithms(sort1, sort2, num_tests=15, rand_func=normal):
     # plot the graph
     plt.plot([2**i for i in range(num_tests)], sort1_times, '-o', color='red', label=algorithms[sort1])
     plt.plot([2**i for i in range(num_tests)], sort2_times, '-o', color='blue', label=algorithms[sort2])
-    plt.title('Time to sort vs list size')
+    plt.title('Time to Sort vs List Size')
     plt.xlabel('List Size')
     plt.ylabel('Time to sort (ms)')
     plt.legend()
