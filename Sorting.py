@@ -10,10 +10,10 @@ def bubble_sort(ls):
 
     :param ls: The list to sort
     """
-    for j in range(len(ls)-1, 0, -1):
+    for j in range(len(ls) - 1, 0, -1):
         for i in range(j):
-            if ls[i] > ls[i+1]:
-                ls[i], ls[i+1] = ls[i+1], ls[i]
+            if ls[i] > ls[i + 1]:
+                ls[i], ls[i + 1] = ls[i + 1], ls[i]
 
 
 #########################################################################################################
@@ -29,10 +29,10 @@ def selection_sort(ls):
 
     :param ls: The list to sort
     """
-    for i in range(len(ls)-1):
+    for i in range(len(ls) - 1):
         minimum = ls[i]
         min_index = i
-        for j in range(i+1, len(ls)):
+        for j in range(i + 1, len(ls)):
             if ls[j] < minimum:
                 minimum = ls[j]
                 min_index = j
@@ -53,8 +53,8 @@ def insertion_sort(ls):
     """
     for i in range(len(ls)):
         for j in range(i, 0, -1):
-            if ls[j] < ls[j-1]:
-                ls[j-1], ls[j] = ls[j], ls[j-1]
+            if ls[j] < ls[j - 1]:
+                ls[j - 1], ls[j] = ls[j], ls[j - 1]
 
 
 #########################################################################################################
@@ -129,8 +129,8 @@ def rand_quick_sort(ls):
 
     :param ls: the list to sort
     """
-    def _rand_quick_sort(arr, start, end):
 
+    def _rand_quick_sort(arr, start, end):
         if start >= end:
             return
 
@@ -142,7 +142,6 @@ def rand_quick_sort(ls):
         if end != p_index:
             # sort the sublist after the partition's index
             _rand_quick_sort(arr, p_index + 1, end)
-
 
     _rand_quick_sort(ls, 0, len(ls) - 1)
 
@@ -173,6 +172,7 @@ def median3_quicksort(ls):
 
     :param ls: The list to sort.
     """
+
     def _median3_quicksort(arr, start, end):
         mid = (start + end) // 2
         # get the median of the three values
@@ -189,8 +189,8 @@ def median3_quicksort(ls):
         if end != p_index:
             _median3_quicksort(arr, p_index + 1, end)
 
-
     _median3_quicksort(ls, 0, len(ls) - 1)
+
 
 # switch the pivot to the end and call the original pivot function
 # which takes the end of the list as the pivot.

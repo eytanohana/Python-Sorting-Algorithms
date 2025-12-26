@@ -7,9 +7,14 @@ from Sorting import bubble_sort, selection_sort, insertion_sort, merge_sort, ran
 
 # We make a dictionary to hold the names of the algorithms
 # for labeling the graph.
-algorithms = {bubble_sort: "Bubble Sort", selection_sort: "Selection Sort",
-              insertion_sort: "Insertion Sort", merge_sort: "Merge Sort",
-              rand_quick_sort: "Random Pivot Quick Sort", median3_quicksort: "Median of 3 Pivot Quick Sort"}
+algorithms = {
+    bubble_sort: 'Bubble Sort',
+    selection_sort: 'Selection Sort',
+    insertion_sort: 'Insertion Sort',
+    merge_sort: 'Merge Sort',
+    rand_quick_sort: 'Random Pivot Quick Sort',
+    median3_quicksort: 'Median of 3 Pivot Quick Sort',
+}
 
 
 def compare_and_plot_algorithms(sort1, sort2, num_tests=15, rand_func=normal):
@@ -30,7 +35,7 @@ def compare_and_plot_algorithms(sort1, sort2, num_tests=15, rand_func=normal):
     sort2_times = []
     # We create NUM_TESTS lists of random numbers to sort.
     for i in range(num_tests):
-        print(".", end='')
+        print('.', end='')
         a = []
         b = []
         # In each successive iteration, we double

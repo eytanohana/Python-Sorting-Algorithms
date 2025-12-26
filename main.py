@@ -8,5 +8,5 @@ def main():
         compare_and_plot_algorithms(algo1, algo2)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
