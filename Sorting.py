@@ -132,7 +132,7 @@ def rand_quick_sort(ls):
             return
 
         # partition the list and get the index of the pivot
-        p_index = partition(ls, start, end)
+        p_index = _partition(ls, start, end)
         if start != p_index:
             # sort the sublist before the partition's index
             rand_quick_sort(ls, start, p_index - 1)
@@ -144,7 +144,7 @@ def rand_quick_sort(ls):
     rand_quick_sort(ls, 0, len(ls) - 1)
 
 
-def partition(ls, start, end):
+def _partition(ls, start, end):
     # choose the pivot to be the last element
     pivot = ls[end]
     i = start - 1
@@ -178,7 +178,7 @@ def median3_quicksort(ls):
         pivot = median[1]
 
         # partition the list and get the index of the pivot.
-        p_index = partition_pivot(ls, start, end, pivot)
+        p_index = _partition_pivot(ls, start, end, pivot)
         # Sort the sub-list from the start to the pivot
         if start != p_index:
             median3_quicksort(ls, start, p_index - 1)
@@ -191,9 +191,9 @@ def median3_quicksort(ls):
 
 # switch the pivot to the end and call the original pivot function
 # which takes the end of the list as the pivot.
-def partition_pivot(ls, start, end, pivot):
+def _partition_pivot(ls, start, end, pivot):
     for i in range(start, end):
         if ls[i] == pivot:
             ls[i], ls[end] = ls[end], ls[i]
             break
-    return partition(ls, start, end)
+    return _partition(ls, start, end)
