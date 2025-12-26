@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from numpy.random import normal
 from random import randint, seed
-from Sorting import *
+from Sorting import bubble_sort, selection_sort, insertion_sort, merge_sort, rand_quick_sort, median3_quicksort
 from time import time
 
 # We make a dictionary to hold the names of the algorithms
@@ -9,6 +9,7 @@ from time import time
 algorithms = {bubble_sort: "Bubble Sort", selection_sort: "Selection Sort",
               insertion_sort: "Insertion Sort", merge_sort: "Merge Sort",
               rand_quick_sort: "Random Pivot Quick Sort", median3_quicksort: "Median of 3 Pivot Quick Sort"}
+
 
 def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
     """
@@ -26,8 +27,7 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
     # to sort both lists using each algorithm
     sort1_times = []
     sort2_times = []
-    # We create NUM_TESTS lists of random
-    # numbers to sort.
+    # We create NUM_TESTS lists of random numbers to sort.
     for i in range(num_tests):
         print(".", end='')
         a = []
@@ -56,15 +56,15 @@ def compareAlgorithms(sort1, sort2, num_tests=15, rand_func=normal):
 
     print()
     # plot the graph
-    plt.plot([2**i for i in range(num_tests)], sort1_times, color='red', label=algorithms[sort1])
-    plt.plot([2**i for i in range(num_tests)], sort2_times, color='blue', label=algorithms[sort2])
-    plt.title('Time as a function of list size')
+    plt.plot([2**i for i in range(num_tests)], sort1_times, '-o', color='red', label=algorithms[sort1])
+    plt.plot([2**i for i in range(num_tests)], sort2_times, '-o', color='blue', label=algorithms[sort2])
+    plt.title('Time to sort vs list size')
     plt.xlabel('List Size')
-    plt.ylabel('Time(ms) to sort')
+    plt.ylabel('Time to sort (ms)')
     plt.legend()
     plt.show()
 
 
-# if __name__ == '__main__':
-#     seed(time())
-#     compareAlgorithms(merge_sort, rand_quick_sort, num_tests=15, rand_func=randint)
+if __name__ == '__main__':
+    seed(time())
+    compareAlgorithms(bubble_sort, insertion_sort, num_tests=15, rand_func=randint)
